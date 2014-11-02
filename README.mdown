@@ -14,5 +14,15 @@ Your portfolio ID will be used for order management.  You'll need to set it in t
 
 You can find your portfolioID from the `Jump To... > Account Settings` page.
 
+### Login
+
+You will use a username and password (separate from your web frontent username/password) to login.  This username/password combo can be setup for you by an Obsidian admin.
+
+### Place order
+
+When you make a request to place an order, the system will, in the interest of expediency, only look to see that it is a well-formed order request before confirming "success".  This success status means that the order was received and has been recorded.  It does not mean that it has been funded, or is going on to the matching engine.  For example, if you place an order that you cannot cover with available funds, it will be created, but then the status updated to `cancelled_nsf`.
+
 ### Current Status
+
+
 

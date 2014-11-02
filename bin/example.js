@@ -4,7 +4,6 @@ var eb = new vertx.EventBus('https://demo.obsidianexchange.com:443/eventbus');
 var portfolioId = "SOME-PORTFOLIO-ID";
 var btcUsdMarket;
 var currentBalances;
-var sessionId;
 
 printBestAsk = function() {
   console.log(btcUsdMarket.best_ask);
@@ -16,7 +15,6 @@ printBestAsk = function() {
 // order_type: ['limit', 'market']
 placeOrder = function(action, quantity, price) {
   var parameters = {
-                    sessionID: sessionId,
                     action: action,
                     market_name: 'btc_usd',
                     price: price,
@@ -31,7 +29,6 @@ placeOrder = function(action, quantity, price) {
 
 cancelOrder = function(orderId) {
   parameters = {
-    sessionID: sessionId,
     id: orderId
   };
   eb.send('cancel_order', parameters);
@@ -39,7 +36,6 @@ cancelOrder = function(orderId) {
 
 getBalances = function() {
   parameters = {
-    sessionID: sessionId,
     portfolio_id: portfolioID
   };
   eb.send('portfolio_accounts.get_balances', parameters);
@@ -62,14 +58,13 @@ eb.onopen = function() {
     console.log(message);
   });
 
-  eb.send('vertx.basicauthmanager.login', {username: 'superusername', password: 'superpassword'}, function(reply) {
-    console.log(reply.sessionID);
-    sessionId = reply.sessionID;
+  eb.login('superusername', 'superpassword', function(reply) {
+    console.log(reply);
   });
 };
 
 var buySomeBTC = function() {
-  placeOrder('buy', 10000, btcUsdMarket.best_ask);
+  placeOrder('buy', 10000, 10000);
 };
 
 setTimeout(buySomeBTC, 3000);
