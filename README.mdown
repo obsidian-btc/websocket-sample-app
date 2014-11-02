@@ -1,0 +1,16 @@
+# Obsidian Socket API Client
+
+### Installation/Setup
+
+You will need node, and run:
+
+```
+npm install vertx-eventbus-client
+```
+
+### PortfolioID
+
+Your portfolio ID will be used for order management.  You'll need to set it in the `example.js` file.
+
+You can find your portfolioID from the `Jump To... > Account Settings` page.
+

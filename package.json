@@ -1,0 +1,14 @@
+{
+  "name": "obsidian-sockets-demo",
+  "version": "0.0.1",
+  "description": "",
+  "engines" : {
+    "node" : ">=0.1.98"
+  },
+  "scripts": {
+    "start": "node bin/example.js",
+    "test": "test"
+  },
+  "author": "",
+  "license": "ISC"
+}
