@@ -1,9 +1,7 @@
 var vertx = require('vertx-eventbus-client');
 
 var eb = new vertx.EventBus('https://demo.obsidianexchange.com:443/eventbus');
-
 var portfolioId = "SOME-PORTFOLIO-ID";
-
 var btcUsdMarket;
 var currentBalances;
 var sessionId;
