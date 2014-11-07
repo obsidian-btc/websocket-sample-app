@@ -36,10 +36,14 @@ cancelOrder = function(orderId) {
 
 getBalances = function() {
   parameters = {
-    portfolio_id: portfolioID
+    portfolio_id: portfolioId
   };
-  eb.send('portfolio_accounts.get_balances', parameters);
+  eb.send('check_portfolio_balances', parameters);
 };
+
+getMarketSummaries = function() {
+  eb.send('markets.info', {market_name: 'btc_usd'});
+}
 
 eb.onopen = function() {
   console.log('Connection opened.');
@@ -58,14 +62,16 @@ eb.onopen = function() {
     console.log(message);
   });
 
-  eb.login('superusername', 'superpassword', function(reply) {
-    console.log(reply);
-  });
+  // eb.login('superusername', 'superpassword', function(reply) {
+  //   console.log(reply);
+  // });
 };
 
 var buySomeBTC = function() {
   placeOrder('buy', 10000, 10000);
 };
 
-setTimeout(buySomeBTC, 3000);
+setTimeout(getBalances, 1000);
+setTimeout(getMarketSummaries, 1000);
+// setTimeout(buySomeBTC, 3000);
 
