@@ -62,9 +62,9 @@ eb.onopen = function() {
     console.log(message);
   });
 
-  // eb.login('superusername', 'superpassword', function(reply) {
-  //   console.log(reply);
-  // });
+  eb.login('superusername', 'superpassword', function(reply) {
+    console.log(reply);
+  });
 };
 
 var buySomeBTC = function() {
