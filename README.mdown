@@ -16,7 +16,7 @@ You can find your portfolioID from the `Jump To... > Account Settings` page.
 
 ### Login
 
-You will use a username and password (separate from your web frontent username/password) to login.  This username/password combo can be found on the .
+You will use a username and password (separate from your web frontend username/password) to login.  This username/password combo can be found on the Account Settings page as well.
 
 ### Place order
 
@@ -26,8 +26,7 @@ When you make a request to place an order, the system will, in the interest of e
 
 You can receive updates of your orders by subscribing to `'portfolio_orders.' + portfolioId` - so something like  `portfolio_orders.6807e1b4-79f8-4284-8641-62c38d8d277e`.
 
-Note that this will only return 50 orders.  If you have more than 50 orders open, well, you shouldn't right now.  Sorry.
-
+Note that this will only return 50 orders.  If you have more than 50 orders open, well, you shouldn't right now.  If that is a problem, please let us know.
 
 ### Best Bid/Ask
 
